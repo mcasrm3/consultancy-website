@@ -347,10 +347,20 @@ h3 {
   font-size: 0.9rem;
 }
 
+.profile-card {
+  margin-top: 1.5rem;
+}
+
 .governance-grid {
   display: grid;
   gap: 1rem;
   margin-top: 1.5rem;
+}
+
+.footer-cin {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: #9aa3ad;
 }
 
 .governance-card {

@@ -67,6 +67,21 @@
       .join("");
   }
 
+  const profile = document.getElementById("profile-list");
+  if (profile && site.profile) {
+    profile.innerHTML = site.profile
+      .map(function (item) {
+        return (
+          "<div><dt>" +
+          escapeHtml(item.title) +
+          "</dt><dd>" +
+          escapeHtml(item.text) +
+          "</dd></div>"
+        );
+      })
+      .join("");
+  }
+
   const directors = document.getElementById("director-list");
   if (directors && site.directors) {
     directors.innerHTML = site.directors
@@ -187,10 +202,13 @@
     url: window.location.origin + window.location.pathname,
     address: {
       "@type": "PostalAddress",
-      streetAddress: site.addressLines[0],
-      addressLocality: site.addressLines[1] || "",
+      streetAddress: "H-187, Sector 63",
+      addressLocality: "Noida",
+      addressRegion: "Uttar Pradesh",
+      postalCode: "201307",
       addressCountry: "IN",
     },
+    identifier: site.cin,
   };
   const script = document.createElement("script");
   script.type = "application/ld+json";

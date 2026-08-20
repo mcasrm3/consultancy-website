@@ -5,9 +5,9 @@
 window.SITE = {
   companyName: "Blue Qualified Management Services Pvt.Ltd",
   shortName: "Blue Qualified",
-  tagline: "Independent advice for lasting decisions.",
+  tagline: "Human resources provision and management services.",
   description:
-    "Blue Qualified Management Services Pvt.Ltd helps organisations make clearer strategic, operational, and financial decisions with practical, senior-led advice.",
+    "Blue Qualified Management Services Pvt.Ltd is an Indian private limited company providing human resources provision and management of human resources functions.",
 
   phoneDisplay: "+91 85889 65900",
   phoneHref: "+918588965900",
@@ -15,10 +15,11 @@ window.SITE = {
   email: "Team@thebluequalified.com",
 
   addressLines: [
-    "Level 4, Business Plaza",
-    "Bandra Kurla Complex",
-    "Mumbai 400051, India",
+    "H-187, Sector 63",
+    "Noida, Gautam Buddha Nagar",
+    "Uttar Pradesh 201307, India",
   ],
+  cin: "U78300UP2024PTC195675",
 
   hours: "Monday–Friday, 9:30 AM – 6:30 PM IST",
   linkedinUrl: "https://www.linkedin.com/",
@@ -33,18 +34,33 @@ window.SITE = {
   heroPrimaryCta: "Discuss a project",
   heroSecondaryCta: "Our services",
 
-  aboutTitle: "About the consultancy",
+  aboutTitle: "About the company",
   aboutLead:
-    "Blue Qualified Management Services Pvt.Ltd is an independent advisory firm. We are not a staffing agency or a software vendor. We exist to give clients an honest view of their options and a plan they can actually run.",
+    "Blue Qualified Management Services Pvt.Ltd is a private limited company incorporated in India on 12 January 2024. Our registered primary business is human resources provision and management of human resources functions.",
   aboutBody: [
-    "Our work sits at the intersection of strategy, operations, and commercial judgement. Engagements are typically focused, time-bound, and led by experienced consultants rather than large junior teams.",
-    "We serve mid-market companies, professional services firms, and growing businesses that need an external partner who will challenge assumptions and stay accountable to outcomes.",
+    "We support organisations with practical HR provision and the day-to-day management of people operations, so leadership teams can run hiring, workforce support, and HR processes with a clear point of contact.",
+    "The company is registered with the Ministry of Corporate Affairs. Statutory particulars below are published for transparency.",
   ],
   stats: [
     { value: "2024", label: "Incorporated on 12 January" },
     { value: "2", label: "Active directors" },
     { value: "MCA", label: "eFiling status: Active" },
     { value: "Pvt. Ltd.", label: "Indian private limited company" },
+  ],
+
+  profileTitle: "Company profile",
+  profile: [
+    { title: "Incorporation date", text: "12 January 2024" },
+    { title: "Corporate Identification Number (CIN)", text: "U78300UP2024PTC195675" },
+    {
+      title: "Registered address",
+      text: "H-187, Sector 63, Noida, Gautam Buddha Nagar, Uttar Pradesh, 201307, India",
+    },
+    { title: "Authorized & paid-up capital", text: "₹1,00,000" },
+    {
+      title: "Primary business activity",
+      text: "Human resources provision and management of human resources functions",
+    },
   ],
 
   directorsTitle: "Board of Directors",
