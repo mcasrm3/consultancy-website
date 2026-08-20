@@ -9,9 +9,9 @@ window.SITE = {
   description:
     "Northbridge Consultancy helps organisations make clearer strategic, operational, and financial decisions with practical, senior-led advice.",
 
-  phoneDisplay: "+91 98765 43210",
-  phoneHref: "+919876543210",
-  whatsappNumber: "919876543210",
+  phoneDisplay: "+91 96545 80049",
+  phoneHref: "+919654580049",
+  whatsappNumber: "919654580049",
   email: "hello@northbridge.example",
 
   addressLines: [
