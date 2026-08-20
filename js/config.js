@@ -41,10 +41,29 @@ window.SITE = {
     "We serve mid-market companies, professional services firms, and growing businesses that need an external partner who will challenge assumptions and stay accountable to outcomes.",
   ],
   stats: [
-    { value: "12+", label: "Years of advisory experience" },
-    { value: "80+", label: "Leadership engagements" },
-    { value: "4", label: "Practice areas" },
-    { value: "1", label: "Clear point of contact" },
+    { value: "2024", label: "Incorporated on 12 January" },
+    { value: "2", label: "Active directors" },
+    { value: "MCA", label: "eFiling status: Active" },
+    { value: "Pvt. Ltd.", label: "Indian private limited company" },
+  ],
+
+  directorsTitle: "Board of Directors",
+  directorsIntro:
+    "The company currently has two active directors on its board, both appointed at the time of incorporation on 12 January 2024.",
+  directors: [
+    { name: "Sakshi Sharma", role: "Director" },
+    { name: "Shagun Sharma", role: "Director" },
+  ],
+  complianceTitle: "Compliance & filing status",
+  compliance: [
+    {
+      title: "eFiling status",
+      text: "Listed as Active with the Ministry of Corporate Affairs (MCA).",
+    },
+    {
+      title: "Financial filings",
+      text: "The company's last Annual General Meeting (AGM) date and its last filed balance sheet details are currently not available in public registry databases.",
+    },
   ],
 
   servicesTitle: "Consultancy services",

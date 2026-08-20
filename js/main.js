@@ -67,6 +67,36 @@
       .join("");
   }
 
+  const directors = document.getElementById("director-list");
+  if (directors && site.directors) {
+    directors.innerHTML = site.directors
+      .map(function (item) {
+        return (
+          "<li><strong>" +
+          escapeHtml(item.name) +
+          "</strong><span>" +
+          escapeHtml(item.role) +
+          "</span></li>"
+        );
+      })
+      .join("");
+  }
+
+  const compliance = document.getElementById("compliance-list");
+  if (compliance && site.compliance) {
+    compliance.innerHTML = site.compliance
+      .map(function (item) {
+        return (
+          "<div><dt>" +
+          escapeHtml(item.title) +
+          "</dt><dd>" +
+          escapeHtml(item.text) +
+          "</dd></div>"
+        );
+      })
+      .join("");
+  }
+
   const services = document.getElementById("services-grid");
   if (services) {
     services.innerHTML = site.services
