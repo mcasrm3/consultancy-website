@@ -3,11 +3,11 @@
  * No other files need changing for company name, contact, copy, or services.
  */
 window.SITE = {
-  companyName: "Northbridge Consultancy",
-  shortName: "Northbridge",
+  companyName: "Blue Qualified Management Services Pvt.Ltd",
+  shortName: "Blue Qualified",
   tagline: "Independent advice for lasting decisions.",
   description:
-    "Northbridge Consultancy helps organisations make clearer strategic, operational, and financial decisions with practical, senior-led advice.",
+    "Blue Qualified Management Services Pvt.Ltd helps organisations make clearer strategic, operational, and financial decisions with practical, senior-led advice.",
 
   phoneDisplay: "+91 85889 65900",
   phoneHref: "+918588965900",
@@ -35,7 +35,7 @@ window.SITE = {
 
   aboutTitle: "About the consultancy",
   aboutLead:
-    "Northbridge is an independent advisory firm. We are not a staffing agency or a software vendor. We exist to give clients an honest view of their options and a plan they can actually run.",
+    "Blue Qualified Management Services Pvt.Ltd is an independent advisory firm. We are not a staffing agency or a software vendor. We exist to give clients an honest view of their options and a plan they can actually run.",
   aboutBody: [
     "Our work sits at the intersection of strategy, operations, and commercial judgement. Engagements are typically focused, time-bound, and led by experienced consultants rather than large junior teams.",
     "We serve mid-market companies, professional services firms, and growing businesses that need an external partner who will challenge assumptions and stay accountable to outcomes.",

@@ -106,8 +106,10 @@ a {
 }
 
 .logo-text {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   letter-spacing: 0.01em;
+  max-width: 18ch;
+  line-height: 1.2;
 }
 
 .site-nav {
