@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Northbridge Consultancy — Independent advice for lasting decisions</title>
+    <meta
+      name="description"
+      content="Northbridge Consultancy helps organisations make clearer strategic, operational, and financial decisions with practical, senior-led advice."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="./" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Northbridge Consultancy" />
+    <meta
+      property="og:description"
+      content="Independent advice for lasting decisions. Strategy, operations, and commercial advisory."
+    />
+    <meta name="theme-color" content="#0d2137" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="logo" href="#home" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true">N</span>
+          <span class="logo-text" data-bind="companyName">Northbridge Consultancy</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Menu</span>
+          <span></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#why">Why us</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="header-phone" data-bind-href="tel" href="tel:+919876543210">
+          <span data-bind="phoneDisplay">+91 98765 43210</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-bind="heroEyebrow">Strategy · Operations · Advisory</p>
+            <h1 data-bind="heroTitle">Clarity for complex business decisions.</h1>
+            <p class="lead" data-bind="heroLead">
+              We work with founders, boards, and leadership teams to diagnose issues, design practical
+              plans, and support execution with a calm, senior approach.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact" data-bind="heroPrimaryCta">Discuss a project</a>
+              <a class="btn btn-ghost" href="#services" data-bind="heroSecondaryCta">Our services</a>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="At a glance">
+            <p class="panel-kicker">Confidential first conversation</p>
+            <p class="panel-quote">
+              “A smaller firm, by design. You speak with the people who will do the work.”
+            </p>
+            <ul class="panel-list">
+              <li>Senior-led engagements</li>
+              <li>Clear written recommendations</li>
+              <li>No product lock-in</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">The firm</p>
+            <h2 data-bind="aboutTitle">About the consultancy</h2>
+            <p class="intro" data-bind="aboutLead"></p>
+          </div>
+          <div class="about-grid">
+            <div class="about-copy" id="about-body"></div>
+            <div class="stats" id="stats"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="services">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">What we do</p>
+            <h2 data-bind="servicesTitle">Consultancy services</h2>
+            <p class="intro" data-bind="servicesIntro"></p>
+          </div>
+          <div class="card-grid" id="services-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="why">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Our difference</p>
+            <h2 data-bind="whyTitle">Why choose us</h2>
+            <p class="intro" data-bind="whyIntro"></p>
+          </div>
+          <div class="reason-grid" id="reasons-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="process">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">How we work</p>
+            <h2 data-bind="processTitle">Our process</h2>
+            <p class="intro" data-bind="processIntro"></p>
+          </div>
+          <ol class="process-list" id="process-list"></ol>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Get in touch</p>
+            <h2 data-bind="contactTitle">Contact us</h2>
+            <p class="intro" data-bind="contactIntro"></p>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-details">
+              <h3>Office</h3>
+              <address id="address"></address>
+              <p>
+                <strong>Phone</strong><br />
+                <a data-bind-href="tel" href="tel:+919876543210"><span data-bind="phoneDisplay"></span></a>
+              </p>
+              <p>
+                <strong>Email</strong><br />
+                <a data-bind-href="mailto" href="mailto:hello@northbridge.example"><span data-bind="email"></span></a>
+              </p>
+              <p>
+                <strong>Hours</strong><br />
+                <span data-bind="hours"></span>
+              </p>
+              <a class="btn btn-whatsapp" data-bind-href="whatsapp" href="#" target="_blank" rel="noopener">
+                Message on WhatsApp
+              </a>
+            </div>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <h3>Send a message</h3>
+              <p class="form-note" data-bind="formNote"></p>
+              <label>
+                Full name
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                Work email
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="phone" autocomplete="tel" />
+              </label>
+              <label>
+                Service of interest
+                <select name="service" id="service-select">
+                  <option value="">Please select</option>
+                </select>
+              </label>
+              <label>
+                How can we help?
+                <textarea name="message" rows="5" required></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit">Open email to send</button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="map-wrap">
+              <h3>Location</h3>
+              <div class="map" id="map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-name" data-bind="companyName">Northbridge Consultancy</p>
+          <p class="footer-tag" data-bind="tagline"></p>
+        </div>
+        <div>
+          <p class="footer-label">Navigate</p>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>
+          <p class="footer-label">Contact</p>
+          <a data-bind-href="tel" href="#"><span data-bind="phoneDisplay"></span></a>
+          <a data-bind-href="mailto" href="#"><span data-bind="email"></span></a>
+          <a data-bind-href="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>
+          © <span id="year"></span> <span data-bind="companyName"></span>. All rights reserved.
+        </p>
+        <p>Independent management consultancy. Website for information only.</p>
+      </div>
+    </footer>
+
+    <a class="whatsapp-float" data-bind-href="whatsapp" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      WhatsApp
+    </a>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
