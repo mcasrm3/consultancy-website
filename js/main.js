@@ -6,7 +6,7 @@
     "https://wa.me/" +
     site.whatsappNumber +
     "?text=" +
-    encodeURIComponent("Hello " + site.companyName + ", I would like to discuss an advisory project.");
+    encodeURIComponent("Hello " + site.shortName + ", I would like to discuss a recruitment requirement.");
 
   function text(el, value) {
     if (el && value != null) el.textContent = value;
@@ -26,7 +26,7 @@
   });
 
   const logoMark = document.querySelector(".logo-mark");
-  if (logoMark) logoMark.textContent = (site.shortName || site.companyName).charAt(0).toUpperCase();
+  if (logoMark) logoMark.textContent = "BQ";
 
   document.querySelectorAll("[data-bind-href]").forEach(function (el) {
     const type = el.getAttribute("data-bind-href");
@@ -87,11 +87,13 @@
     directors.innerHTML = site.directors
       .map(function (item) {
         return (
-          "<li><strong>" +
+          '<article class="founder-card"><div class="founder-avatar" aria-hidden="true">' +
+          escapeHtml(item.name.split(" ").map(function (part) { return part.charAt(0); }).join("")) +
+          '</div><div><h3>' +
           escapeHtml(item.name) +
-          "</strong><span>" +
+          "</h3><p>" +
           escapeHtml(item.role) +
-          "</span></li>"
+          "</p></div></article>"
         );
       })
       .join("");
@@ -116,8 +118,30 @@
   if (services) {
     services.innerHTML = site.services
       .map(function (item) {
+        const tags = (item.tags || []).map(function (tag) {
+          return "<li>" + escapeHtml(tag) + "</li>";
+        }).join("");
         return (
           '<article class="card reveal"><h3>' +
+          escapeHtml(item.title) +
+          "</h3><p>" +
+          escapeHtml(item.text) +
+          '</p><ul class="card-tags">' +
+          tags +
+          "</ul></article>"
+        );
+      })
+      .join("");
+  }
+
+  const industries = document.getElementById("industries-grid");
+  if (industries && site.industries) {
+    industries.innerHTML = site.industries
+      .map(function (item, index) {
+        return (
+          '<article class="industry-card reveal"><span>' +
+          String(index + 1).padStart(2, "0") +
+          "</span><h3>" +
           escapeHtml(item.title) +
           "</h3><p>" +
           escapeHtml(item.text) +
@@ -159,6 +183,13 @@
       .join("");
   }
 
+  const jobCategories = document.getElementById("job-categories");
+  if (jobCategories && site.jobCategories) {
+    jobCategories.innerHTML = site.jobCategories.map(function (item) {
+      return "<span>" + escapeHtml(item) + "</span>";
+    }).join("");
+  }
+
   const address = document.getElementById("address");
   if (address) {
     address.innerHTML = site.addressLines.map(escapeHtml).join("<br />");
@@ -194,7 +225,7 @@
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "EmploymentAgency",
     name: site.companyName,
     description: site.description,
     telephone: site.phoneDisplay,
@@ -230,46 +261,88 @@
     });
   }
 
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-  if (form) {
+  function setupMailForm(formId, statusId, subject, requiredFields, fieldLabels) {
+    const form = document.getElementById(formId);
+    const status = document.getElementById(statusId);
+    if (!form) return;
+
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       const data = new FormData(form);
-      const name = (data.get("name") || "").toString().trim();
-      const email = (data.get("email") || "").toString().trim();
-      const phone = (data.get("phone") || "").toString().trim();
-      const service = (data.get("service") || "").toString().trim();
-      const message = (data.get("message") || "").toString().trim();
-
-      if (!name || !email || !message) {
-        if (status) status.textContent = "Please complete name, email, and message.";
+      const missing = requiredFields.some(function (field) {
+        return !(data.get(field) || "").toString().trim();
+      });
+      if (missing) {
+        if (status) status.textContent = "Please complete all required fields.";
         return;
       }
 
-      const body = [
-        "Name: " + name,
-        "Email: " + email,
-        "Phone: " + phone,
-        "Service: " + service,
-        "",
-        message,
-      ].join("\n");
+      const body = Object.keys(fieldLabels).map(function (field) {
+        const value = data.get(field);
+        if (value instanceof File) {
+          return fieldLabels[field] + ": " + (value.name || "Not selected");
+        }
+        return fieldLabels[field] + ": " + (value || "");
+      }).join("\n");
 
       const mailto =
         "mailto:" +
         site.email +
         "?subject=" +
-        encodeURIComponent("Website enquiry — " + site.companyName) +
+        encodeURIComponent(subject + " — " + site.shortName) +
         "&body=" +
         encodeURIComponent(body);
 
       window.location.href = mailto;
       if (status) {
-        status.textContent = "Your email app should open with the message. If it does not, write to " + site.email + ".";
+        status.textContent = "Your email app should open. Attach any selected file before sending.";
       }
     });
   }
+
+  setupMailForm(
+    "contact-form",
+    "form-status",
+    "Website enquiry",
+    ["name", "email", "message"],
+    { name: "Name", email: "Email", phone: "Phone", service: "Interest", message: "Message" }
+  );
+
+  setupMailForm(
+    "hire-form",
+    "hire-status",
+    "Hiring requirement",
+    ["company", "name", "email", "phone", "requirement"],
+    {
+      company: "Company",
+      name: "Contact Person",
+      email: "Email",
+      phone: "Mobile",
+      industry: "Industry",
+      positions: "Number of Positions",
+      locations: "Locations",
+      requirement: "Hiring Requirement",
+      jobDescription: "Job Description file",
+    }
+  );
+
+  setupMailForm(
+    "career-form",
+    "career-status",
+    "Candidate application",
+    ["name", "phone", "email", "preferredRole"],
+    {
+      name: "Name",
+      phone: "Mobile",
+      email: "Email",
+      currentLocation: "Current Location",
+      preferredLocation: "Preferred Location",
+      experience: "Experience",
+      qualification: "Qualification",
+      preferredRole: "Preferred Role",
+      resume: "Resume file",
+    }
+  );
 
   const observer = new IntersectionObserver(
     function (entries) {
